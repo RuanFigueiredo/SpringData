@@ -9,7 +9,13 @@ import org.springframework.stereotype.Service;
 public class ProdutoService {
     private ProdutoRepository repository;
 
+    //recebendo o produtoRepository pronto sem precisar instancia-lo.
     public ProdutoService(ProdutoRepository repository) {
         this.repository = repository;
+    }
+
+    //invocando o save do repository
+    public void salvar(Produto produto){
+        repository.save(produto);
     }
 }
